@@ -1,12 +1,15 @@
 import { useState } from 'react';
+import { Routes,Route } from 'react-router-dom';
 import './App.css';
 import Login from './Login';
+import Dashboard from './components/pages/Dashboard';
 
 function App() {
   return (
-    <>
-      <Login />
-    </>
+    <Routes>
+      <Route path="/" element={<Login/>}/>
+      <Route path="/dashboard" element={<Dashboard/>}/>
+    </Routes>
   );
 }
 

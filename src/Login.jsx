@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import api from "./api/axios";
+import { useNavigate } from "react-router-dom";
 
 function Login(){
     const [changetoggle,setChangeToggle]=useState(false);
@@ -10,6 +11,7 @@ function Login(){
         email:"",
         password:"",
     });
+    const navigate = useNavigate();
 
     const [registerData,setRegisterData]=useState({
         first_name:"",
@@ -78,6 +80,7 @@ function Login(){
         try{
             await api.post('/login',formData);
             alert("Login Successfull");
+            navigate("/dashboard");
             handleReset();
         }
         catch(error){
