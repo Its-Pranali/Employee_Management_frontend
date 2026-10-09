@@ -1,0 +1,174 @@
+.header{
+    border-bottom: 1px solid #EEF0F8;
+}
+.search-icon{
+    top:12px;
+    left:10px;
+}
+/* aside{
+    width:100%;
+    max-width:20%;
+    background: #13142b;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    color:#fff;
+    padding:10px
+}
+.sidebar-header{
+    position:fixed;
+    top:0px;
+} */
+
+
+
+
+
+.sidebar {
+  --bg: #0e0e22;
+  --text: #a3a3c2;
+  --text-strong: #ffffff;
+  --accent: #6c8cff;
+  --active-bg: rgba(99, 102, 241, 0.16);
+
+  width: 262px;
+  height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ---------- Header ---------- */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 17px;
+  background: linear-gradient(135deg, #7c5cff, #5b6cff);
+  box-shadow: 0 4px 14px rgba(108, 92, 255, 0.4);
+}
+
+.brand-name {
+  margin: 0;
+  color: var(--text-strong);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.brand-sub {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #6b6b8d;
+}
+
+/* ---------- Scrollable menu ---------- */
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 10px 20px;
+}
+
+.sidebar-content::-webkit-scrollbar {
+  width: 5px;
+}
+.sidebar-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+}
+
+/* ---------- Menu items ---------- */
+.menu-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 14px;
+  margin-bottom: 4px;
+  background: transparent;
+  border: 0;
+  border-radius: 10px;
+  color: var(--text);
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-strong);
+}
+
+.menu-icon {
+  width: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+}
+
+.menu-label {
+  flex: 1;
+}
+
+.menu-arrow {
+  opacity: 0.6;
+}
+
+/* Parent (Dashboards) highlighted while open */
+.menu-item.parent-active {
+  background: var(--active-bg);
+  color: var(--accent);
+}
+
+/* Child items sit slightly muted */
+.submenu .menu-item.child {
+  padding: 10px 14px;
+  font-weight: 400;
+}
+
+/* Active item with left accent bar */
+.menu-item.active,
+.menu-item.parent-active {
+  background: var(--active-bg);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.menu-item.active::before,
+.menu-item.parent-active::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 0 4px 4px 0;
+  background: var(--accent);
+}
+
+/* Active child label turns white like the screenshot */
+.menu-item.child.active {
+  color: var(--text-strong);
+}
+.menu-item.child.active .menu-icon {
+  color: var(--accent);
+}
+
+.sidebar-footer {
+  padding: 10px;
+}
