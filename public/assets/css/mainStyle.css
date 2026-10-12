@@ -172,3 +172,7 @@
 .sidebar-footer {
   padding: 10px;
 }
+
+.sidebar{
+  position: fixed;
+}

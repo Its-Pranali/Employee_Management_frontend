@@ -7,6 +7,9 @@ import {
 } from "react-icons/fa";
 import { MdSpaceDashboard } from "react-icons/md";
 import "../../../public/assets/css/mainStyle.css";
+import { useNavigate } from "react-router-dom";
+
+
 
 const menu = [
   {
@@ -16,8 +19,8 @@ const menu = [
     children: [
       { key: "main", label: "Main Dashboard", icon: <FaTachometerAlt /> },
       { key: "ecommerce", label: "E-Commerce", icon: <FaBriefcase /> },
-      { key: "employees", label: "Employees", icon: <FaUsers /> },
-      { key: "leads", label: "Leads", icon: <FaAddressBook /> },
+      { key: "employees", label: "Employees", icon: <FaUsers />,link:'/employee' },
+      { key: "leads", label: "Leads", icon: <FaAddressBook />, link:'/leads' },
       { key: "hr", label: "HR", icon: <FaHeartbeat /> },
       { key: "it", label: "IT Admin", icon: <FaServer /> },
     ],
@@ -34,6 +37,8 @@ const menu = [
 function Sidebar() {
   const [openMenu, setOpenMenu] = useState("dashboards");
   const [activeItem, setActiveItem] = useState("employees");
+
+  const navigate = useNavigate();
 
   const toggleMenu = (key) => {
     setOpenMenu((prev) => (prev === key ? "" : key));
@@ -69,7 +74,7 @@ function Sidebar() {
               {isOpen && item.children.length > 0 && (
                 <div className="submenu">
                   {item.children.map((child) => (
-                    <button type="button" key={child.key} className={`menu-item child ${activeItem === child.key ? "active" : ""}`} onClick={() => setActiveItem(child.key)} >
+                    <button type="button" key={child.key} className={`menu-item child ${activeItem === child.key ? "active" : ""}`} onClick={() => { setActiveItem(child.key); if (child.link) { navigate(child.link); } }} >
                       <span className="menu-icon">{child.icon}</span>
                       <span className="menu-label">{child.label}</span>
                     </button>
@@ -81,7 +86,9 @@ function Sidebar() {
         })}
       </nav>
 
-      <div className="sidebar-footer"></div>
+      <div className="sidebar-footer">
+        
+      </div>
     </aside>
   );
 }
