@@ -18,7 +18,7 @@ const menu = [
     icon: <MdSpaceDashboard />,
     children: [
       { key: "main", label: "Main Dashboard", icon: <FaTachometerAlt /> },
-      { key: "ecommerce", label: "E-Commerce", icon: <FaBriefcase /> },
+      { key: "ecommerce", label: "Department", icon: <FaBriefcase />,link:'/department' },
       { key: "employees", label: "Employees", icon: <FaUsers />,link:'/employee' },
       { key: "leads", label: "Leads", icon: <FaAddressBook />, link:'/leads' },
       { key: "hr", label: "HR", icon: <FaHeartbeat /> },
