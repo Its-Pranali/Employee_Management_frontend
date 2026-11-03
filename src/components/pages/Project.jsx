@@ -9,6 +9,14 @@ function Project(){
                         <button className="btn btn-sm btn-primary" type="button" onClick={addEmployee} >Add Project</button>
                     </div>
                 </div>
+
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="table-responsive">
+                            <table className=""></table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </Main>
     );
